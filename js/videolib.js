@@ -1,8 +1,10 @@
+//Variable Declaration
 let navbar = document.getElementById("navItems");
 let item = navbar.getElementsByTagName("li");
 let leftNavbar = document.getElementById("leftNavbar");
 let aItem = leftNavbar.getElementsByTagName("span");
 
+//Functions
 for(let i = 0; i < item.length; i++){
 	item[i].addEventListener("mouseenter", function(event){
 	//Adds background color
@@ -27,4 +29,17 @@ for (let i = 0; i < aItem.length; i++){
 		event.target.style.color = "black";	
 	}
 	})
+}
+
+function search(){
+	var videos = document.getElementById('videos').children;
+	var input = searchText.value.toLowerCase();
+//	console.log(input);
+	for (i=0; i<videos.length;i++){
+		if(videos[i].id.toLowerCase().includes(input)){
+			videos[i].style.display = "block";
+		} else{
+			videos[i].style.display = "none";
+		}
+	}
 }
